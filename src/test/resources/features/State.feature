@@ -18,7 +18,10 @@ Feature: Get location information of a city using country and state
 
     Examples:
       | invalidCountry | state      |city       |
-      | "2s"           | "MA"       |"belmont"  |
+      | "us "          | "MA"       |"belmont"  |
+      | " us"          | "MA"       |"belmont"  |
+      | " uus "        | "MA"       |"belmont"  |
+      | "uss"          | "MA"       |"belmont"  |
 
   Scenario Outline: Get a unsuccessful response when sending a country, an invalid state and a city
     Given The user has access to the zippopotamus endpoint
@@ -26,8 +29,11 @@ Feature: Get location information of a city using country and state
     Then The response status code should be 404
 
     Examples:
-      | country        | invalidState   |city       |
-      | "us"           | "5f"           |"belmont"  |
+      | country        | invalidState    |city       |
+      | "us"           | "MMA"           |"belmont"  |
+      | "us"           | " MA"           |"belmont"  |
+      | "us"           | "MA "           |"belmont"  |
+      | "us"           | ""              |"belmont"  |
 
   Scenario Outline: Get a unsuccessful response when sending a country, an state and a invalid city
     Given The user has access to the zippopotamus endpoint
@@ -36,7 +42,11 @@ Feature: Get location information of a city using country and state
 
     Examples:
       | country        | state          |invalidCity       |
-      | "us"           | "MA"           |"belm584"         |
+      | "us"           | "MA"           |"elmont"          |
+      | "us"           | "MA"           |" belmont"        |
+      | "us"           | "MA"           |""                |
+      | "us"           | "MA"           |"belmon"          |
+      | "us"           | "MA"           |"belmt"           |
 
   Scenario Outline: Get a unsuccessful response when sending a invalid country, an invalid state and a city
     Given The user has access to the zippopotamus endpoint
@@ -45,7 +55,10 @@ Feature: Get location information of a city using country and state
 
     Examples:
       | invalidCountry        | invalidState          |city       |
-      | "@8"                  | "@#"                  |"belmont"  |
+      | ""                    | ""                    |"belmont"  |
+      | " us"                 | " MAA"                |"belmont"  |
+      | " uss"                | "MAAA"                |"belmont"  |
+      | "us."                 | " MA "                |"belmont"  |
 
   Scenario Outline: Get a unsuccessful response when sending a invalid country, an state and a invalid city
     Given The user has access to the zippopotamus endpoint
@@ -54,7 +67,10 @@ Feature: Get location information of a city using country and state
 
     Examples:
       | invalidCountry        | state                 |invalidCity       |
-      | "@8"                  | "MA"                  |"belm%$@"         |
+      | ""                    | "MA"                  |""                |
+      | "u"                   | "MA"                  |"elmont"          |
+      | "uss"                 | "MA"                  |"belmon"          |
+      | " us"                 | "MA"                  |"belmontt"         |
 
   Scenario Outline: Get a unsuccessful response when sending a country, an invalid state and a invalid city
     Given The user has access to the zippopotamus endpoint
@@ -62,8 +78,11 @@ Feature: Get location information of a city using country and state
     Then  The response status code should be 404
 
     Examples:
-      | country               | invalidState          |invalidCity       |
-      | "us"                  | "@#"                  |"belm%$@"         |
+      | country               | invalidState           |invalidCity      |
+      | "us"                  | "M"                    |"bbelmont"       |
+      | "us"                  | ".A"                   |"belmontt"       |
+      | "us"                  | "MA"                   |"blmont"         |
+      | "us"                  | "MAA"                  |""               |
 
   Scenario Outline: Get a unsuccessful response when sending a invalid country, an invalid state and a invalid city
     Given The user has access to the zippopotamus endpoint
@@ -71,7 +90,9 @@ Feature: Get location information of a city using country and state
     Then  The response status code should be 404
 
     Examples:
-      | invalidCountry               | invalidState          |invalidCity       |
-      | "89"                         | "@#"                  |"belm%$@"         |
-
+      | invalidCountry       | invalidState          |invalidCity       |
+      | "u"                  | "@#"                  |"belmontt"         |
+      | ""                   | "@#"                  |"elmont."         |
+      | "uss"                | "@#"                  |"elmon"           |
+      | "s"                  | "@#"                  |""                |
 

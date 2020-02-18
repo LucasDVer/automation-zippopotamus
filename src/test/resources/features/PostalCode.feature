@@ -25,12 +25,12 @@ Feature: Get location information of a city using country and postal code
       | "1us"          | "90210"    |
       | "uss"          | "90210"    |
       | "u s"          | "90210"    |
-      | "20a"          | "90210"    |
-      | "20a"          | "90210"    |
-      | "u65"          | "10000"    |
-      | "a5p"          | "1010"     |
-      | "2r5"          | "3500"     |
-      | ""          | "3500"     |
+      | "uus"          | "90210"    |
+      | "us "          | "90210"    |
+      | "hr."          | "10000"    |
+      | ".at"          | "1010"     |
+      | "aarr"         | "3500"     |
+      | ""             | "3500"     |
 
 
   Scenario Outline: Get a unsuccessful response when sending a  postal code and a invalid country
@@ -42,12 +42,12 @@ Feature: Get location information of a city using country and postal code
       | country | invalidPostalCode |
       | "us"    | "902100"          |
       | "at"    | "1011"            |
-      | "us"    | "902100a"         |
+      | "us"    | "990210"          |
       | "us"    | "a902100"         |
-      | "us"    | "a"               |
-      | "us"    | "9as_9"           |
-      | "hr"    | "@85%^*6"         |
-      | "us"    | ""                |
+      | "us"    | " 90210"          |
+      | "us"    | ".90210"          |
+      | "hr"    | "10 000"          |
+      | "ar"    | ""                |
 
 
   Scenario Outline: Get a unsuccessful response when sending a invalid postal code and a invalid country
@@ -57,10 +57,10 @@ Feature: Get location information of a city using country and postal code
 
     Examples:
       | invalidCountry | invalidPostalCode |
-      | "20a"          | "9as_9"           |
-      | "u65"          | "@85%^6"          |
-      | "a5p"          | "18/*"            |
-      | "2r5"          | "+9*0"            |
+      | "uus"          | "90210"           |
+      | "hr "          | "3500"            |
+      | "att "         | " 1010 "          |
+      | "ar"           | " 35000"            |
 
 
 
