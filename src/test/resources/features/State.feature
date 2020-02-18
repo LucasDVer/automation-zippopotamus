@@ -91,8 +91,8 @@ Feature: Get location information of a city using country and state
 
     Examples:
       | invalidCountry       | invalidState          |invalidCity       |
-      | "u"                  | "@#"                  |"belmontt"         |
-      | ""                   | "@#"                  |"elmont."         |
-      | "uss"                | "@#"                  |"elmon"           |
-      | "s"                  | "@#"                  |""                |
+      | "u"                  | "M"                  |"belmontt"         |
+      | ""                   | "M "                  |"elmont."         |
+      | "uss"                | " AM"                  |"elmon"           |
+      | "s"                  | " MM"                  |""                |
 
