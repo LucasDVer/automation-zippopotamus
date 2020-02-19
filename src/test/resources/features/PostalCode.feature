@@ -28,6 +28,7 @@ Feature: Get location information of a city using country and postal code
       | "hr."          | "10000"    |
       | ".at"          | "1010"     |
       | "aarr"         | "3500"     |
+      | ""             | "3500"     |
 
 
   Scenario Outline: Get a unsuccessful response when sending a  postal code and a invalid country
