@@ -55,7 +55,7 @@ Feature: Get location information of a city using country and postal code
     Examples:
       | invalidCountry | invalidPostalCode |
       | "uus"          | "90210"           |
-      | "hr "          | "3500"            |
+      | "hr"           | "3500"            |
       | "att "         | "1.010"           |
       | "ar"           | "35000"           |
 
