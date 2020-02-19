@@ -24,13 +24,10 @@ Feature: Get location information of a city using country and postal code
       | "us1"          | "90210"    |
       | "1us"          | "90210"    |
       | "uss"          | "90210"    |
-      | "u s"          | "90210"    |
       | "uus"          | "90210"    |
-      | "us "          | "90210"    |
       | "hr."          | "10000"    |
       | ".at"          | "1010"     |
       | "aarr"         | "3500"     |
-      | ""             | "3500"     |
 
 
   Scenario Outline: Get a unsuccessful response when sending a  postal code and a invalid country
@@ -44,9 +41,9 @@ Feature: Get location information of a city using country and postal code
       | "at"    | "1011"            |
       | "us"    | "990210"          |
       | "us"    | "a902100"         |
-      | "us"    | " 90210"          |
+      | "us"    | "900210"          |
       | "us"    | ".90210"          |
-      | "hr"    | "10 000"          |
+      | "hr"    | "10.000"          |
       | "ar"    | ""                |
 
 
@@ -59,8 +56,8 @@ Feature: Get location information of a city using country and postal code
       | invalidCountry | invalidPostalCode |
       | "uus"          | "90210"           |
       | "hr "          | "3500"            |
-      | "att "         | " 1010 "          |
-      | "ar"           | " 35000"            |
+      | "att "         | "1.010"           |
+      | "ar"           | "35000"           |
 
 
 

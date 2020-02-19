@@ -18,9 +18,7 @@ Feature: Get location information of a city using country and state
 
     Examples:
       | invalidCountry | state      |city       |
-      | "us "          | "MA"       |"belmont"  |
-      | " us"          | "MA"       |"belmont"  |
-      | " uus "        | "MA"       |"belmont"  |
+      | "uus"          | "MA"       |"belmont"  |
       | "uss"          | "MA"       |"belmont"  |
 
   Scenario Outline: Get a unsuccessful response when sending a country, an invalid state and a city
@@ -31,9 +29,7 @@ Feature: Get location information of a city using country and state
     Examples:
       | country        | invalidState    |city       |
       | "us"           | "MMA"           |"belmont"  |
-      | "us"           | " MA"           |"belmont"  |
-      | "us"           | "MA "           |"belmont"  |
-      | "us"           | ""              |"belmont"  |
+      | "us"           | "MaA"           |"belmont"  |
 
   Scenario Outline: Get a unsuccessful response when sending a country, an state and a invalid city
     Given The user has access to the zippopotamus endpoint
@@ -43,7 +39,7 @@ Feature: Get location information of a city using country and state
     Examples:
       | country        | state          |invalidCity       |
       | "us"           | "MA"           |"elmont"          |
-      | "us"           | "MA"           |" belmont"        |
+      | "us"           | "MA"           |"belmont."        |
       | "us"           | "MA"           |""                |
       | "us"           | "MA"           |"belmon"          |
       | "us"           | "MA"           |"belmt"           |
@@ -54,11 +50,10 @@ Feature: Get location information of a city using country and state
     Then The response status code should be 404
 
     Examples:
-      | invalidCountry        | invalidState          |city       |
-      | ""                    | ""                    |"belmont"  |
-      | " us"                 | " MAA"                |"belmont"  |
-      | " uss"                | "MAAA"                |"belmont"  |
-      | "us."                 | " MA "                |"belmont"  |
+      | invalidCountry        | invalidState         |city       |
+      | "uus"                 | "MAA"                |"belmont"  |
+      | "uss"                 | "MMA"                |"belmont"  |
+      | "us."                 | ".MA"                |"belmont"  |
 
   Scenario Outline: Get a unsuccessful response when sending a invalid country, an state and a invalid city
     Given The user has access to the zippopotamus endpoint
@@ -67,10 +62,9 @@ Feature: Get location information of a city using country and state
 
     Examples:
       | invalidCountry        | state                 |invalidCity       |
-      | ""                    | "MA"                  |""                |
       | "u"                   | "MA"                  |"elmont"          |
       | "uss"                 | "MA"                  |"belmon"          |
-      | " us"                 | "MA"                  |"belmontt"         |
+      | "uus"                 | "MA"                  |""                |
 
   Scenario Outline: Get a unsuccessful response when sending a country, an invalid state and a invalid city
     Given The user has access to the zippopotamus endpoint
@@ -91,8 +85,7 @@ Feature: Get location information of a city using country and state
 
     Examples:
       | invalidCountry       | invalidState          |invalidCity       |
-      | "u"                  | "M"                  |"belmontt"         |
-      | ""                   | "M "                  |"elmont."         |
-      | "uss"                | " AM"                  |"elmon"           |
-      | "s"                  | " MM"                  |""                |
+      | "u"                  | "M"                   |"belmontt"        |
+      | "uss"                | "AM"                  |"elmon"           |
+      | "s"                  | "MM"                  |""                |
 
