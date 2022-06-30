@@ -1,7 +1,7 @@
 package zippopotamus.steps;
 
 
-import io.cucumber.core.api.Scenario;
+
 import io.cucumber.java8.En;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
@@ -11,8 +11,8 @@ public class PostalCodeSteps implements En {
 
     private Response response;
     private static final String BASED_ZIPPOPOTAMOUS_URL = "http://zippopotam.us/";
-    private String getLocationInformationByCountryAndPostalcode = BASED_ZIPPOPOTAMOUS_URL + "country/postalCode";
-    private String getLocationInformationByCountry_StateAndCity = BASED_ZIPPOPOTAMOUS_URL + "country/state/city";
+    private final String getLocationInformationByCountryAndPostalCode = BASED_ZIPPOPOTAMOUS_URL + "country/postalCode";
+    private final String getLocationInformationByCountry_StateAndCity = BASED_ZIPPOPOTAMOUS_URL + "country/state/city";
 
     public PostalCodeSteps() {
         super();
@@ -21,7 +21,7 @@ public class PostalCodeSteps implements En {
             System.out.println("This API does not need extra authentication"));
 
         When("The user performs a GET request with a {string} and {string}", (String country, String postalCode) -> {
-            String url = getLocationInformationByCountryAndPostalcode.replace("country", country).replace("postalCode", postalCode);
+            String url = getLocationInformationByCountryAndPostalCode.replace("country", country).replace("postalCode", postalCode);
             response = RestAssured.given().get(url);
         });
 
