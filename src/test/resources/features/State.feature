@@ -38,10 +38,8 @@ Feature: Get location information of a city using country and state
 
     Examples:
       | country        | state          |invalidCity       |
-      | "us"           | "MA"           |"elmont"          |
       | "us"           | "MA"           |"belmont."        |
       | "us"           | "MA"           |""                |
-      | "us"           | "MA"           |"belmon"          |
       | "us"           | "MA"           |"belmt"           |
 
   Scenario Outline: Get a unsuccessful response when sending a invalid country, an invalid state and a city
