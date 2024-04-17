@@ -1,5 +1,6 @@
 package zippopotamus.steps;
 
+
 import io.cucumber.java.en.*;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
@@ -9,7 +10,9 @@ public class PostalCodeSteps{
 
     private Response response;
     private static final String BASED_ZIPPOPOTAMOUS_URL = "http://zippopotam.us/";
+  
     private final String getLocationInformationByCountryAndPostalcode = BASED_ZIPPOPOTAMOUS_URL + "country/postalCode";
+
     private final String getLocationInformationByCountry_StateAndCity = BASED_ZIPPOPOTAMOUS_URL + "country/state/city";
 
     @Given("The user has access to the zippopotamus endpoint")
