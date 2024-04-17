@@ -1,6 +1,5 @@
 package zippopotamus;
 
-
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
@@ -10,10 +9,10 @@ import org.junit.runner.RunWith;
 
         glue = {"zippopotamus.steps"},
 
-        tags = {"@smoke"},
+        tags = "@smoke",
 
         plugin = {"pretty", "json:target/cucumber-reports.json", "html:target/cucumber-reports",
-                "io.qameta.allure.cucumber4jvm.AllureCucumber4Jvm"},
+                "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"},
 
         monochrome = true)
 

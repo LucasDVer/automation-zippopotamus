@@ -5,7 +5,7 @@ Feature: Get location information of a city using country and state
     Given The user has access to the zippopotamus endpoint
     When The user performs a GET request with a <country>, a <state> and a <city>
     Then The response status code should be 200
-    And The response body should contains <state> as state abbreviation
+    And The response body should contain <state> as state abbreviation
 
     Examples:
       | country | state      |city       |

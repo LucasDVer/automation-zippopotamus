@@ -5,7 +5,7 @@ Feature: Get location information of a city using country and postal code
     Given The user has access to the zippopotamus endpoint
     When The user performs a GET request with a <country> and <postalCode>
     Then The response status code should be 200
-    And The response body should contains <postalCode> as postal code
+    And The response body should contain <postalCode> as postal code
 
     Examples:
       | country | postalCode |
