@@ -1,6 +1,5 @@
 package zippopotamus;
 
-
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
@@ -12,7 +11,8 @@ import org.junit.runner.RunWith;
 
         tags = "@smoke",
 
-        plugin = {"pretty", "json:target/cucumber-reports.json", "html:target/cucumber-reports"},
+        plugin = {"pretty", "json:target/cucumber-reports.json", "html:target/cucumber-reports",
+                "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"},
 
         monochrome = true)
 
